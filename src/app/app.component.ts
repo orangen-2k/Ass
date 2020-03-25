@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent  {
-  title = "Thông tin danh sách bệnh viện hiện nay";
+  title = "Danh sách trường đại học thành phố Hà Nội";
 }
