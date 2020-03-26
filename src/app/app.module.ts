@@ -1,15 +1,26 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import {RouterModule} from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { PtService } from './pt.service';
-import { Con1Component } from './con1/con1.component';
-import { Con2Component } from './con2/con2.component';
+import { SchoolsComponent } from './schools/schools.component';
+import { ClassComponent } from './class/class.component';
+import { SchoolsCtComponent } from './schools-ct/schools-ct.component';
+import { ClassCtComponent } from './class-ct/class-ct.component';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, Con1Component, Con2Component ],
+  imports:      [ 
+    BrowserModule, FormsModule , HttpClientModule,ReactiveFormsModule,
+    RouterModule.forRoot([
+      {path: '', component: SchoolsComponent},
+      {path: 'school/:schoolId', component: SchoolsCtComponent},
+      {path: 'class/:classId', component: ClassCtComponent},
+    ])
+    ],
+  declarations: [ AppComponent, SchoolsComponent, ClassComponent, SchoolsCtComponent, ClassCtComponent ],
   bootstrap:    [ AppComponent ],
   providers: [PtService]
 })

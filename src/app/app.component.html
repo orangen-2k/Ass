@@ -5,7 +5,7 @@
   </div>
   <div class="menu">
     <ul>
-        <li class="trangchu"><a href="Trangchu">Trang chủ</a></li>
+        <li class="trangchu"><a routerLink="/">Trang chủ</a></li>
         <li><a href="#">Thông tin</a></li>
         <li><a href="#">Gợi ý </a></li>
         <li><a href="#">Liên hệ</a></li>
@@ -53,17 +53,44 @@
 </div>
   <br>
   <div class="text-center">
-    <app-con2 (onAdd)="themtt($event)" (onClear)="cancel($event)" ></app-con2>
+    <button (click)="themtt()" class="btn btn-sm btn-success">Thêm</button>
+    &nbsp;
+    <button (click)="themtt()" class="btn btn-sm btn-success">Sửa</button>
+    &nbsp;
+    <button (click)="cancel()" class="btn btn-sm btn-success">Làm mới</button>
   </div>
   <br>
-  <app-con1 *ngFor="let chuyen of datalh" [herodata]="chuyen" (onRemoveEvent)="xoatt($event)" (onEdit)="chuy($event)"></app-con1>
+  <table border="1" align="center">
+        <tr>
+          <th width="30">ID</th>
+          <th width="150">Tên trường</th>
+          <th width="150">Tên lớp</th>
+          <th width="150">Số học sinh</th>
+          <th width="150">Id trường</th>
+          <th width="130">Giáo viên chủ  nhiệm</th>
+          <th width="120">Action</th>
+        </tr>
+        <tr *ngFor="let herodata of datalh ">
+          <td>{{herodata.id}}</td>
+          <td>{{herodata.name}}</td>
+          <td>{{herodata.room_number}}</td>
+          <td>{{herodata.total_student}}</td>
+          <td>{{herodata.schoolId}}</td>
+          <td>{{herodata.main_teacher}}</td>
+          <td>&nbsp;
+            <input (click)="chuy(herodata)" class="btn btn-sm btn-danger" type="button" value="Edit"/>&nbsp;
+            <input (click)="xoatt(herodata)"  class="btn btn-sm btn-danger" type="button" value="Xóa"/>
+          </td>
+         </tr>
+      </table>
   <br>
 <br>
   <div class="footer">
     <div class="diachi">
         <p> <strong>Seacher</strong></p>
     </div> 
-  </div>  
+  </div>
+  <router-outlet></router-outlet>  
 </body>
 
   
