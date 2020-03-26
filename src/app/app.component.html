@@ -25,23 +25,23 @@
          <div class="col-6 offset-3">
             <table>
              <tr>
-               <td>Tên bệnh viện</td>
+               <td>Tên trường</td>
                <td><input type="text" [value]="data.name" (keyup)="data.name = $event.target.value" class="form-control"></td>
              </tr>
              <tr>
-               <td>Ảnh bênh viện</td>
+               <td>Logo trường</td>
                <td><input type="text" [value]="data.room_number" (keyup)="data.room_number = $event.target.value" class="form-control"></td>
-             </tr>
-             <tr>
-               <td>Tên gián đốc</td>
-               <td><input type="text" [value]="data.total_student" (keyup)="data.total_student = $event.target.value" class="form-control"></td>
              </tr>
              <tr>
                <td>Địa chỉ</td>
                <td><input type="text" [value]="data.schoolId" (keyup)="data.schoolId = $event.target.value" class="form-control"></td>
              </tr>
              <tr>
-               <td>Số ca nhiễm</td>
+               <td>Tên hiệu trưởng</td>
+               <td><input type="text" [value]="data.main_teacher" (keyup)="data.main_teacher = $event.target.value" class="form-control"></td>
+             </tr>
+             <tr>
+               <td>Tỉnh/thành phố</td>
                <td><input type="text" [value]="data.main_teacher" (keyup)="data.main_teacher = $event.target.value" class="form-control"></td>
              </tr>
            </table>
@@ -60,29 +60,7 @@
     <button (click)="cancel()" class="btn btn-sm btn-success">Làm mới</button>
   </div>
   <br>
-  <table border="1" align="center">
-        <tr>
-          <th width="30">ID</th>
-          <th width="150">Tên trường</th>
-          <th width="150">Tên lớp</th>
-          <th width="150">Số học sinh</th>
-          <th width="150">Id trường</th>
-          <th width="130">Giáo viên chủ  nhiệm</th>
-          <th width="120">Action</th>
-        </tr>
-        <tr *ngFor="let herodata of datalh ">
-          <td>{{herodata.id}}</td>
-          <td>{{herodata.name}}</td>
-          <td>{{herodata.room_number}}</td>
-          <td>{{herodata.total_student}}</td>
-          <td>{{herodata.schoolId}}</td>
-          <td>{{herodata.main_teacher}}</td>
-          <td>&nbsp;
-            <input (click)="chuy(herodata)" class="btn btn-sm btn-danger" type="button" value="Edit"/>&nbsp;
-            <input (click)="xoatt(herodata)"  class="btn btn-sm btn-danger" type="button" value="Xóa"/>
-          </td>
-         </tr>
-      </table>
+  <router-outlet></router-outlet>  
   <br>
 <br>
   <div class="footer">
@@ -90,7 +68,6 @@
         <p> <strong>Seacher</strong></p>
     </div> 
   </div>
-  <router-outlet></router-outlet>  
 </body>
 
   

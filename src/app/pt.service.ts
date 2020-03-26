@@ -15,6 +15,15 @@ constructor(private http: HttpClient) { }
     let url = `${apiUrl}/${hotelId}`;
     return this.http.get<any>(url);
   }
+getClass(): Observable<any>{
+    return this.http.get<any>(apiUrl+"/3"+"/class");
+  }
+  getClassById(roomId): Observable<any>{
+    let url = `${apiUrl+"/3"+"/class"}/${roomId}`;
+    return this.http.get<any>(url);
+  }
+
+
   removeHotelById(hotelId): Observable<any>{
     let url = `${apiUrl}/${hotelId}`;
     return this.http.delete<any>(url);

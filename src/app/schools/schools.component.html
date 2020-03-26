@@ -1,5 +1,13 @@
-<ul>
-  <li *ngFor="let hotel of hotels">
-    <a [routerLink]="['school', hotel.id]">{{hotel.name}}</a>
-  </li>
-</ul> 
+<table border="1" align="center">
+        <tr>
+          <th width="200">Danh sách trường học</th>
+          <th width="120">Action</th>
+        </tr>
+        <tr *ngFor="let hotel of hotels ">
+          <td><a [routerLink]="['school', hotel.id]">{{hotel.name}}</a></td>
+          <td>&nbsp;
+            <input (click)="chuy(herodata)" class="btn btn-sm btn-danger" type="button" value="Edit"/>&nbsp;
+            <input (click)="xoatt(herodata)"  class="btn btn-sm btn-danger" type="button" value="Xóa"/>
+          </td>
+         </tr>
+</table>

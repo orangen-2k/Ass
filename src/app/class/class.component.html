@@ -1,0 +1,5 @@
+<ul>
+  <li *ngFor="let room of hotels">
+    <a [routerLink]="['../../class', room.id]">{{room.name}}</a>
+  </li>
+</ul>
