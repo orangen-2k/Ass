@@ -1,0 +1,24 @@
+
+      <table border="1" align="center">
+        <tr>
+          <th width="30">ID</th>
+          <th width="150">Tên trường</th>
+          <th width="150">Tên lớp</th>
+          <th width="150">Số học sinh</th>
+          <th width="150">Id trường</th>
+          <th width="130">Giáo viên chủ  nhiệm</th>
+          <th width="120">Action</th>
+        </tr>
+        <tr>
+          <td>{{herodata.id}}</td>
+          <td>{{herodata.name}}</td>
+          <td>{{herodata.room_number}}</td>
+          <td>{{herodata.total_student}}</td>
+          <td>{{herodata.schoolId}}</td>
+          <td>{{herodata.main_teacher}}</td>
+          <td>&nbsp;
+            <input (click)="EditEventFire()" class="btn btn-sm btn-danger" type="button" value="Edit"/>&nbsp;
+            <input (click)="removeEventFire()"  class="btn btn-sm btn-danger" type="button" value="Xóa"/>
+          </td>
+         </tr>
+      </table> 

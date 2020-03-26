@@ -1,5 +1,5 @@
 body{
-  width: 2000px;
+  width: 1500px;
 }
 .header img{
   margin-left: 180px;
@@ -19,7 +19,7 @@ body{
   
   margin: 0px;
   padding: 0px;
-  margin-left: 730px;
+  margin-left: 500px;
 
 }
 .menu ul li{
@@ -56,7 +56,7 @@ body{
 }
 .diachi{
   float: left;
-  margin-left: 1000px;
+  margin-left: 700px;
   margin-top: 17px;
 }
 .diachi p{

@@ -18,9 +18,46 @@
   </div>
 
 <div class="content">
-  <a></a>
+  <div class="container">
+    <div class="row">
+      <div class="col-8 offset-2 border">
+        <div class="row">
+         <div class="col-6 offset-3">
+            <table>
+             <tr>
+               <td>Tên bệnh viện</td>
+               <td><input type="text" [value]="data.name" (keyup)="data.name = $event.target.value" class="form-control"></td>
+             </tr>
+             <tr>
+               <td>Ảnh bênh viện</td>
+               <td><input type="text" [value]="data.room_number" (keyup)="data.room_number = $event.target.value" class="form-control"></td>
+             </tr>
+             <tr>
+               <td>Tên gián đốc</td>
+               <td><input type="text" [value]="data.total_student" (keyup)="data.total_student = $event.target.value" class="form-control"></td>
+             </tr>
+             <tr>
+               <td>Địa chỉ</td>
+               <td><input type="text" [value]="data.schoolId" (keyup)="data.schoolId = $event.target.value" class="form-control"></td>
+             </tr>
+             <tr>
+               <td>Số ca nhiễm</td>
+               <td><input type="text" [value]="data.main_teacher" (keyup)="data.main_teacher = $event.target.value" class="form-control"></td>
+             </tr>
+           </table>
+          </div>
+        </div>
+      </div>
+  </div> 
 </div>
-
+</div>
+  <br>
+  <div class="text-center">
+    <app-con2 (onAdd)="themtt($event)" (onClear)="cancel($event)" ></app-con2>
+  </div>
+  <br>
+  <app-con1 *ngFor="let chuyen of datalh" [herodata]="chuyen" (onRemoveEvent)="xoatt($event)" (onEdit)="chuy($event)"></app-con1>
+  <br>
 <br>
   <div class="footer">
     <div class="diachi">
