@@ -1,6 +1,22 @@
-<h2>{{hotelData.name}}</h2>
-<img [src]="hotelData.logo" width="150">
-<br>
-<h3>{{hotelData.province}}, {{hotelData.president}}</h3>
-<button (click)="removeHotel()">Delete</button>
+<table border="1" align="center">
+        <tr>
+          <th width="200">Tên trường học</th>
+          <th width="200">Logo trường</th>
+          <th width="200">Địa chỉ</th>
+          <th width="200">Tên hiệu trưởng</th>
+          <th width="200">Tỉnh/thành phố</th>
+          <th width="120">Action</th>
+        </tr>
+        <tr>
+          <td>{{hotelData.name}}</td>
+          <td>{{hotelData.logo}}</td>
+          <td>{{hotelData.address}}</td>
+          <td>{{hotelData.president}}</td>
+          <td>{{hotelData.province}}</td>
+          <td>&nbsp;
+            <input (click)="chuy(herodata)" class="btn btn-sm btn-danger" type="button" value="Edit"/>&nbsp;
+            <input (click)="xoatt(herodata)"  class="btn btn-sm btn-danger" type="button" value="Xóa"/>
+          </td>
+         </tr>
+</table>
 <app-class></app-class>
