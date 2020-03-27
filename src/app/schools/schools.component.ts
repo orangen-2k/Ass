@@ -8,13 +8,13 @@ import {PtService} from '../pt.service';
 })
 export class SchoolsComponent implements OnInit {
 
-  hotels = [];
-  constructor(private hotelService: PtService) { }
+  schools = [];
+  constructor(private schoolsService: PtService) { }
 
   ngOnInit() {
-    this.hotelService.getSchools().subscribe(data => {
+    this.schoolsService.getSchools().subscribe(data => {
       console.log(data);
-      this.hotels = data;
+      this.schools = data;
     });
   }
 

@@ -1,7 +1,7 @@
 <div class="ds">
 <ul>
-  <li *ngFor="let room of hotels">
-    <a [routerLink]="['../../class', room.id]">{{room.name}}</a>
+  <li *ngFor="let class of classsData">
+    <a [routerLink]="['../../class', class.id]">{{class.name}}</a>
   </li>
 </ul>
 </div>

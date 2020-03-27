@@ -8,13 +8,13 @@ import {PtService} from '../pt.service';
 })
 export class ClassComponent implements OnInit {
 
-  hotels = [];
-  constructor(private hotelService: PtService) { }
+  classsData = [];
+  constructor(private classsService: PtService) { }
 
   ngOnInit() {
-    this.hotelService.getClass().subscribe(data => {
+    this.classsService.getClass().subscribe(data => {
       console.log(data);
-      this.hotels = data;
+      this.classsData = data;
     });
   }
 

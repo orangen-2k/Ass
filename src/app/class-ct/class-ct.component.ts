@@ -9,19 +9,19 @@ import {PtService} from '../pt.service';
 })
 export class ClassCtComponent implements OnInit {
 
-  hotelData = null;
+  classData = null;
   constructor(
-    private hotelService: PtService,
+    private classService: PtService,
     private activeRoute: ActivatedRoute,
     private route: Router
   ) { }
 
   ngOnInit() {
     this.activeRoute.paramMap.subscribe(params => {
-      let hotelId = params.get('classId');
-      this.hotelService.getClassById(hotelId).subscribe(data => {
+      let classId = params.get('classId');
+      this.classService.getClassById(classId).subscribe(data => {
         console.log(data);
-        this.hotelData = data;
+        this.classData = data;
       })
     })
   }

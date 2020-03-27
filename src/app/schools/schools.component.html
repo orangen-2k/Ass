@@ -3,8 +3,8 @@
           <th width="200">Danh sách trường học</th>
           <th width="120">Action</th>
         </tr>
-        <tr *ngFor="let hotel of hotels ">
-          <td><a [routerLink]="['school', hotel.id]">{{hotel.name}}</a></td>
+        <tr *ngFor="let school of schools ">
+          <td><a [routerLink]="['school', school.id]">{{school.name}}</a></td>
           <td>&nbsp;
             <input (click)="chuy(herodata)" class="btn btn-sm btn-danger" type="button" value="Edit"/>&nbsp;
             <input (click)="xoatt(herodata)"  class="btn btn-sm btn-danger" type="button" value="Xóa"/>

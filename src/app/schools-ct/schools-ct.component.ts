@@ -9,28 +9,20 @@ import { PtService } from "../pt.service";
 })
 export class SchoolsCtComponent implements OnInit {
 
-  hotelData = null;
+  schoolsData = null;
   constructor(
-    private hotelService: PtService,
+    private schoolService: PtService,
     private activeRoute: ActivatedRoute,
     private route: Router
   ) {}
 
   ngOnInit() {
     this.activeRoute.paramMap.subscribe(params => {
-      let hotelId = params.get("schoolId");
-      this.hotelService.getSchoolsById(hotelId).subscribe(data => {
+      let schoolId = params.get("schoolId");
+      this.schoolService.getSchoolsById(schoolId).subscribe(data => {
         console.log(data);
-        this.hotelData = data;
+        this.schoolsData = data;
       });
     });
-  }
-  removeHotel() {
-    let conf = confirm("Bạn chắc chắn muốn xóa khách sạn này?");
-    if (conf) {
-      this.hotelService.removeHotelById(this.hotelData.id).subscribe(data => {
-        this.route.navigate([""]);
-      });
-    }
   }
 }
