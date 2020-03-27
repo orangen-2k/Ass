@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from "@angular/router";
 import {PtService} from '../pt.service';
 
 @Component({
@@ -7,15 +8,24 @@ import {PtService} from '../pt.service';
   styleUrls: ['./schools.component.css']
 })
 export class SchoolsComponent implements OnInit {
-
-  schools = [];
-  constructor(private schoolsService: PtService) { }
+  schools = null;
+  constructor(
+    private schoolService: PtService,
+    private activeRoute: ActivatedRoute,
+    private route: Router) { }
 
   ngOnInit() {
-    this.schoolsService.getSchools().subscribe(data => {
+    this.schoolService.getSchools().subscribe(data => {
       console.log(data);
       this.schools = data;
     });
   }
-
+  removeSchools() {
+    let conf = confirm("Bạn chắc chắn muốn xóa trường này?");
+    if (conf) {
+      this.schoolService.removeSchoolsById(this.schools.id).subscribe(data => {
+        this.route.navigate([""]);
+      });
+    }
+  }
 } 

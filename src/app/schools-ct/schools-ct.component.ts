@@ -8,14 +8,13 @@ import { PtService } from "../pt.service";
   styleUrls: ['./schools-ct.component.css']
 })
 export class SchoolsCtComponent implements OnInit {
-  title = "Danh sách các lớp trong trường";
   schoolsData = null;
   constructor(
     private schoolService: PtService,
     private activeRoute: ActivatedRoute,
     private route: Router
   ) {}
-
+  title = "Danh sách các lớp trong trường";
   ngOnInit() {
     this.activeRoute.paramMap.subscribe(params => {
       let schoolId = params.get("schoolId");
@@ -24,5 +23,13 @@ export class SchoolsCtComponent implements OnInit {
         this.schoolsData = data;
       });
     });
+  }
+  removeSchools() {
+    let conf = confirm("Bạn chắc chắn muốn xóa trường này?");
+    if (conf) {
+      this.schoolService.removeSchoolsById(this.schoolsData.id).subscribe(data => {
+        this.route.navigate([""]);
+      });
+    }
   }
 }

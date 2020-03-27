@@ -11,10 +11,24 @@ constructor(private http: HttpClient) { }
   getSchools(): Observable<any>{
     return this.http.get<any>(apiUrl);
   }
-  getSchoolsById(hotelId): Observable<any>{
-    let url = `${apiUrl}/${hotelId}`;
+  getSchoolsById(schoolsId): Observable<any>{
+    let url = `${apiUrl}/${schoolsId}`;
     return this.http.get<any>(url);
   }
+  removeSchoolsById(schoolsId): Observable<any>{
+    let url = `${apiUrl}/${schoolsId}`;
+    return this.http.delete<any>(url);
+  }
+  addNewHotel(hotelObject): Observable<any>{
+    return this.http.post<any>(apiUrl, hotelObject);
+  }
+
+  updateHotel(hotelObject): Observable<any>{
+    let url = `${apiUrl}/${hotelObject.id}`;
+    return this.http.put<any>(url, hotelObject);
+  }
+
+
 getClass(): Observable<any>{
     return this.http.get<any>(apiUrl+"/3"+"/class");
   }

@@ -15,8 +15,8 @@
           <td>{{schoolsData.president}}</td>
           <td>{{schoolsData.province}}</td>
           <td>&nbsp;
-            <input (click)="chuy(herodata)" class="btn btn-sm btn-danger" type="button" value="Edit"/>&nbsp;
-            <input (click)="xoatt(herodata)"  class="btn btn-sm btn-danger" type="button" value="Xóa"/>
+            <input [routerLink]="['../../schoolscn', schoolsData.id]" class="btn btn-sm btn-danger" type="button" value="Edit"/>&nbsp;
+            <input (click)="removeSchools()"  class="btn btn-sm btn-danger" type="button" value="Xóa"/>
           </td>
          </tr>
 </table>
