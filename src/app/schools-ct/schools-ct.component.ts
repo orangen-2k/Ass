@@ -19,7 +19,7 @@ export class SchoolsCtComponent implements OnInit {
   ngOnInit() {
     this.activeRoute.paramMap.subscribe(params => {
       let hotelId = params.get("schoolId");
-      this.hotelService.getHotelById(hotelId).subscribe(data => {
+      this.hotelService.getSchoolsById(hotelId).subscribe(data => {
         console.log(data);
         this.hotelData = data;
       });

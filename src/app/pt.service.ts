@@ -11,7 +11,7 @@ constructor(private http: HttpClient) { }
   getSchools(): Observable<any>{
     return this.http.get<any>(apiUrl);
   }
-  getHotelById(hotelId): Observable<any>{
+  getSchoolsById(hotelId): Observable<any>{
     let url = `${apiUrl}/${hotelId}`;
     return this.http.get<any>(url);
   }
@@ -21,19 +21,5 @@ getClass(): Observable<any>{
   getClassById(roomId): Observable<any>{
     let url = `${apiUrl+"/3"+"/class"}/${roomId}`;
     return this.http.get<any>(url);
-  }
-
-
-  removeHotelById(hotelId): Observable<any>{
-    let url = `${apiUrl}/${hotelId}`;
-    return this.http.delete<any>(url);
-  }
-  addNewHotel(hotelObject): Observable<any>{
-    return this.http.post<any>(apiUrl, hotelObject);
-  }
-
-  updateHotel(hotelObject): Observable<any>{
-    let url = `${apiUrl}/${hotelObject.id}`;
-    return this.http.put<any>(url, hotelObject);
   }
 }
