@@ -7,7 +7,7 @@ import {PtService} from './pt.service';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent  {
-  title = "Danh sách trường đại học thành phố Hà Nội";
+  title = "Danh sách thông tin trường đại học thành phố Hà Nội";
 
   constructor(){}
 

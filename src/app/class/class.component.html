@@ -1,7 +1,6 @@
-<div class="ds">
-<ul>
-  <li *ngFor="let class of classsData">
-    <a [routerLink]="['../../class', class.id]">{{class.name}}</a>
-  </li>
-</ul>
-</div>
+
+    <div class="cuon" id="test_1">
+       <tr *ngFor="let class of classsData">
+          <td><a [routerLink]="['../../class', class.id]">{{class.name}}</a></td>
+      </tr>
+    </div>

@@ -1,4 +1,49 @@
-<table border="1" align="center">
+  <div class="imga">
+    <img width="200" src="https://image.thanhnien.vn/768/uploaded/ngocthanh/2018_08_03/chua-benh_kuyy.jpg" class="img-fluid"/>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-8 offset-2 border">
+        <div class="row">
+         <div class="col-6 offset-3">
+            <table>
+             <tr>
+               <td>Tên trường</td>
+               <td><input type="text" [value]="data.name" (keyup)="data.name = $event.target.value" class="form-control"></td>
+             </tr>
+             <tr>
+               <td>Logo trường</td>
+               <td><input type="text" [value]="data.room_number" (keyup)="data.room_number = $event.target.value" class="form-control"></td>
+             </tr>
+             <tr>
+               <td>Địa chỉ</td>
+               <td><input type="text" [value]="data.schoolId" (keyup)="data.schoolId = $event.target.value" class="form-control"></td>
+             </tr>
+             <tr>
+               <td>Tên hiệu trưởng</td>
+               <td><input type="text" [value]="data.main_teacher" (keyup)="data.main_teacher = $event.target.value" class="form-control"></td>
+             </tr>
+             <tr>
+               <td>Tỉnh/thành phố</td>
+               <td><input type="text" [value]="data.main_teacher" (keyup)="data.main_teacher = $event.target.value" class="form-control"></td>
+             </tr>
+           </table>
+          </div>
+        </div>
+      </div>
+  </div> 
+</div>
+  <br>
+  <div class="text-center">
+    <button (click)="themtt()" class="btn btn-sm btn-success">Thêm</button>
+    &nbsp;
+    <button (click)="themtt()" class="btn btn-sm btn-success">Sửa</button>
+    &nbsp;
+    <button (click)="cancel()" class="btn btn-sm btn-success">Làm mới</button>
+  </div>
+  <br>
+    <div class="cuon" id="test_1">
+      <table border="1" align="center">
         <tr>
           <th width="200">Danh sách trường học</th>
           <th width="120">Action</th>
@@ -11,3 +56,4 @@
           </td>
          </tr>
 </table>
+    </div>
