@@ -8,7 +8,7 @@ import {PtService} from '../pt.service';
   styleUrls: ['./class-ct.component.css']
 })
 export class ClassCtComponent implements OnInit {
-
+  title = "Danh sách học sinh trong lớp";
   classData = null;
   constructor(
     private classService: PtService,
