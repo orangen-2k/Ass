@@ -1,40 +1,36 @@
-<div class="imga" [formGroup]="schoolForm">
-  <img width="200" [src]="schoolForm.value.logo" class="img-fluid"/>
-</div>
+<div class="container">
 <div class="row">
-  <div class="col-8 offset-2 border">
-    <div class="row">
-      <div class="col-6 offset-3">
-        <table [formGroup]="schoolForm">
-          <tr>
-            <td>Tên trường:</td>
-            <td><input type="text" formControlName="name" class="form-control"></td>
-          </tr>
-          <tr>
-            <td>Logo trường:</td>
-            <td><input type="text" formControlName="logo" class="form-control"></td>
-          </tr>
-          <tr>
-            <td>Địa chỉ:</td>
-            <td><input type="text" formControlName="address" class="form-control"></td>
-          </tr>
-          <tr>
-            <td>Tên hiệu trưởng:</td>
-            <td><input type="text" formControlName="president" class="form-control"></td>
-          </tr>
-          <tr>
-            <td>Tỉnh/thành phố:</td>
-            <td><input type="text" formControlName="province" class="form-control"></td>
-          </tr>
-        </table>
-      </div>
-    </div>
+  <table [formGroup]="schoolForm">
+    <tr>
+      <td>Tên trường:</td>
+      <td><input type="text" formControlName="name" class="form-control"></td>
+    </tr>
+    <tr>
+      <td>Logo trường:</td>
+      <td><input type="text" formControlName="logo" class="form-control"></td>
+    </tr>
+    <tr>
+      <td>Địa chỉ:</td>
+      <td><input type="text" formControlName="address" class="form-control"></td>
+    </tr>
+    <tr>
+      <td>Tên hiệu trưởng:</td>
+      <td><input type="text" formControlName="president" class="form-control"></td>
+    </tr>
+    <tr>
+      <td>Tỉnh/thành phố:</td>
+      <td><input type="text" formControlName="province" class="form-control"></td>
+    </tr>
+  </table>
+  <div class="imga" [formGroup]="schoolForm">
+    <img width="250" [src]="schoolForm.value.logo" class="img-fluid"/>
   </div>
 </div>
 <br>
-<div class="container">
+<div class="btttn">
   <button (click)="saveClass()" class="btn btn-sm btn-success">Lưu</button>&nbsp;&nbsp;
   <button (click)="canelClass()" class="btn btn-sm btn-success">Làm mới</button>
+</div>
 </div>
 <br>
 <div class="cuon" id="test_1">

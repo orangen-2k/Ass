@@ -1,7 +1,6 @@
-table {
-	margin: 0px auto;
+.row{
+  margin-left: 160px;
 }
-
 table, td, th {
   border: 0.1px solid green;
 	border-collapse: collapse;
@@ -10,9 +9,6 @@ table, td, th {
 	font-weight: bold;
 	font-size: 20PX;
   height: 50px;
-}
-.slg{
-  text-align: center;
 }
 .cuon{
   border:5px solid #00ff00;
@@ -23,13 +19,6 @@ table, td, th {
 #test_1{
   width:800px;height:300px;
 }
-.imga{
-  height: 250px;
-  text-align: center;
-}
-.container{
-  text-align: center;
-}
 button {
 	width: 90px;
   height: 35px;
@@ -37,4 +26,14 @@ button {
 	padding: 5px;
 	outline: none;
 	box-shadow: inset 0px 0px 20px gray;
+}
+.slg{
+  text-align: center;
+}
+.imga{
+  height: 250px;
+  margin-left: 130px;
+}
+.btttn{
+  margin-left: 250px;
 }

@@ -1,5 +1,5 @@
-table {
-	margin: 0px auto;
+.row{
+  margin-left: 160px;
 }
 table, td, th {
 	border: 2px solid green;
@@ -9,7 +9,7 @@ table, td, th {
 	font-weight: bold;
 	font-size: 19PX;
   height: 50px;
-}
+} 
 .cuon{
   border:5px solid #00ff00;
   margin-bottom:100px;
@@ -29,8 +29,8 @@ button {
 }
 .imga{
   height: 250px;
-  text-align: center;
+  margin-left: 130px;
 }
-.container{
-  text-align: center;
+.btttn{
+  margin-left: 250px;
 }
