@@ -20,10 +20,10 @@ export class ClassCtComponent implements OnInit {
     this.activeRoute.paramMap.subscribe(data => {
       let schoolId = data.get('schoolId');
       let classId =  data.get('classId');
-      this.classService.getClassById(schoolId, classId).subscribe(data => {
-        console.log(data);
-        this.classData = data;
+        this.classService.getClassById(schoolId, classId).subscribe(data => {
+          console.log(data);
+          this.classData = data;
+        })
       })
-    })
-  }
+    }
 }

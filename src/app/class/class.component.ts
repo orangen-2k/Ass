@@ -21,8 +21,7 @@ export class ClassComponent implements OnInit {
       this.classsService.getClass(schoolId).subscribe(data => {
         console.log(data);
         this.classsData = data;
-    });
       });
+    });
   }
-
 } 

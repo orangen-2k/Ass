@@ -1,6 +1,14 @@
-
-    <div class="cuon" id="test_1">
-       <tr *ngFor="let class of classsData">
-          <td><a [routerLink]="['../../class', class.id]">{{class.name}}</a></td>
-      </tr>
-    </div>
+<div class="cuon" id="test_1">
+  <tr>
+    <th width="600">Danh sách các lớp trong trường</th>
+    <th width="200">Action</th>
+   </tr>
+  <tr *ngFor="let class of classs">
+    <td>{{class.name}}</td>
+    <td>&nbsp;
+      <input [routerLink]="['class', class.id]"  class="btn btn-sm btn-success" type="button" value="Show"/>&nbsp;
+      <input (click)="editMotels(class)" class="btn btn-sm btn-info" type="button" value="Edit"/>&nbsp;
+      <input (click)="removeClass(class)"  class="btn btn-sm btn-danger" type="button" value="Delete"/>
+    </td>
+  </tr>
+</div>
