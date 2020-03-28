@@ -41,7 +41,22 @@ export class SchoolsComponent implements OnInit {
         console.log(data);
         this.route.navigate(['']);
       })
+    }else {
+      this.schoolService.updateSchools(this.schoolForm.value).subscribe(data => {
+        this.ngOnInit();
+      });
     }
+    this.canelMotel();
+  }
+  canelMotel() {
+    this.schoolForm = new FormGroup({
+      id: new FormControl(null),
+      name: new FormControl(""),
+      logo: new FormControl(""),
+      address: new FormControl(''),
+      president: new FormControl(''),
+      province: new FormControl('')
+    });
   }
   removeSchools(motel) {
     let conf = confirm("Bạn muốn xóa trường này?");
