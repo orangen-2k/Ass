@@ -21,6 +21,7 @@ import { SchoolsCnComponent } from './schools-cn/schools-cn.component';
       {path: 'school/:schoolId', component: SchoolsCtComponent},
       {path: 'class/:classId', component: ClassCtComponent},
       {path: 'schoolscn/:id', component: SchoolsCnComponent},
+      {path: 'schoolsadd', component: SchoolsCnComponent},
     ])
     ],
   declarations: [ AppComponent, SchoolsComponent, ClassComponent, SchoolsCtComponent, ClassCtComponent, SchoolsCnComponent ],

@@ -9,39 +9,37 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./schools-cn.component.css']
 })
 export class SchoolsCnComponent implements OnInit {
-hotelForm = new FormGroup({
+  hotelForm = new FormGroup({
     id: new FormControl(null),
     name: new FormControl(''),
     logo: new FormControl(''),
     address: new FormControl(''),
     president: new FormControl(''),
     province: new FormControl('')
-  });
+});
   constructor(
-    private hotelService: PtService,
+    private schoolService: PtService,
+    private activeRoute: ActivatedRoute,
     private route: Router,
-    private activeRoute: ActivatedRoute
   ) { }
 
-    ngOnInit() {
+  ngOnInit() {
     this.activeRoute.paramMap.subscribe(params =>{
       let hotelId = params.get('id');
-      this.hotelService.getSchoolsById(hotelId).subscribe(data => {
-       this.hotelForm.setValue(data);
+      this.schoolService.getSchoolsById(hotelId).subscribe(data => {
+      this.hotelForm.setValue(data);
       })
     })
   }
   
   saveHotel(){
     if(this.hotelForm.value.id == null){
-      // thêm mới
-      this.hotelService.addNewHotel(this.hotelForm.value).subscribe(data => {
+      this.schoolService.addNewHotel(this.hotelForm.value).subscribe(data => {
         console.log(data);
         this.route.navigate(['']);
       })
     }else{
-      // cập nhật
-      this.hotelService.updateHotel(this.hotelForm.value).subscribe(data => {
+      this.schoolService.updateHotel(this.hotelForm.value).subscribe(data => {
         console.log(data);
         this.route.navigate(['']);
       })

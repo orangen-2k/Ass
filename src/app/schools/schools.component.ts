@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from "@angular/router";
-import {PtService} from '../pt.service';
+import { Router, ActivatedRoute } from '@angular/router';
+import { PtService } from '../pt.service';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-schools',
@@ -8,6 +9,14 @@ import {PtService} from '../pt.service';
   styleUrls: ['./schools.component.css']
 })
 export class SchoolsComponent implements OnInit {
+  hotelForm = new FormGroup({
+    id: new FormControl(null),
+    name: new FormControl(''),
+    logo: new FormControl(''),
+    address: new FormControl(''),
+    president: new FormControl(''),
+    province: new FormControl('')
+});
   schools = null;
   constructor(
     private schoolService: PtService,
@@ -26,6 +35,19 @@ export class SchoolsComponent implements OnInit {
       this.schoolService.removeSchoolsById(this.schools.id).subscribe(data => {
         this.route.navigate([""]);
       });
+    }
+  }
+  saveHotel(){
+    if(this.hotelForm.value.id == null){
+      this.schoolService.addNewHotel(this.hotelForm.value).subscribe(data => {
+        console.log(data);
+        this.route.navigate(['']);
+      })
+    }else{
+      this.schoolService.updateHotel(this.hotelForm.value).subscribe(data => {
+        console.log(data);
+        this.route.navigate(['']);
+      })
     }
   }
 } 
