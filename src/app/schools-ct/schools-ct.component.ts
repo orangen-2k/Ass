@@ -9,7 +9,7 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./schools-ct.component.css']
 })
 export class SchoolsCtComponent implements OnInit {
-  
+  schoolData = null;
   classs = [];
   schoolForm = new FormGroup({
     id: new FormControl(null),
@@ -29,6 +29,7 @@ export class SchoolsCtComponent implements OnInit {
       let schoolId = params.get("schoolId");
       this.schoolService.getSchoolsById(schoolId).subscribe(data => {
         console.log(data);
+        this.schoolData = data;
       });
       this.schoolService.getClass(schoolId).subscribe(data => {
         console.log(data);
