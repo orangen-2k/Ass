@@ -21,9 +21,13 @@
          </tr>
 </table>
 <br>
-<div class="slg">
-        <h2>{{title}}</h2>
-  </div>
 <br>
-<app-class></app-class>
+<div class="cuon" id="test_1">
+        <tr>
+          <th width="600">Danh sách các lớp trong trường</th>
+        </tr>
+          <tr *ngFor="let class of classs">
+          <td><a [routerLink]="['class', class.id]">{{class.name}}</a></td>
+      </tr>
+    </div>
 <br>

@@ -9,18 +9,22 @@ import { PtService } from "../pt.service";
 })
 export class SchoolsCtComponent implements OnInit {
   schoolsData = null;
+  classs = [];
   constructor(
     private schoolService: PtService,
     private activeRoute: ActivatedRoute,
     private route: Router
   ) {}
-  title = "Danh sách các lớp trong trường";
   ngOnInit() {
     this.activeRoute.paramMap.subscribe(params => {
       let schoolId = params.get("schoolId");
       this.schoolService.getSchoolsById(schoolId).subscribe(data => {
         console.log(data);
         this.schoolsData = data;
+      });
+      this.schoolService.getClass(schoolId).subscribe(data => {
+        console.log(data);
+        this.classs = data;
       });
     });
   }

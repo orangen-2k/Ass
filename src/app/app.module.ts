@@ -19,9 +19,9 @@ import { SchoolsCnComponent } from './schools-cn/schools-cn.component';
     RouterModule.forRoot([
       {path: '', component: SchoolsComponent},
       {path: 'school/:schoolId', component: SchoolsCtComponent},
-      {path: 'class/:classId', component: ClassCtComponent},
       {path: 'schoolscn/:id', component: SchoolsCnComponent},
       {path: 'schoolstt', component: SchoolsCnComponent},
+      {path: "school/:schoolId/class/:classId",component: ClassCtComponent},
     ])
     ],
   declarations: [ AppComponent, SchoolsComponent, ClassComponent, SchoolsCtComponent, ClassCtComponent, SchoolsCnComponent ],

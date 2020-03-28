@@ -17,9 +17,10 @@ export class ClassCtComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.activeRoute.paramMap.subscribe(params => {
-      let classId = params.get('classId');
-      this.classService.getClassById(classId).subscribe(data => {
+    this.activeRoute.paramMap.subscribe(data => {
+      let schoolId = data.get('schoolId');
+      let classId =  data.get('classId');
+      this.classService.getClassById(schoolId, classId).subscribe(data => {
         console.log(data);
         this.classData = data;
       })

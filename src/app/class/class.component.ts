@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from "@angular/router";
 import {PtService} from '../pt.service';
 
 @Component({
@@ -9,13 +10,19 @@ import {PtService} from '../pt.service';
 export class ClassComponent implements OnInit {
 
   classsData = [];
-  constructor(private classsService: PtService) { }
-
+  constructor(
+    private classsService: PtService,
+    private activeRoute: ActivatedRoute,
+    private route: Router
+  ) {}
   ngOnInit() {
     this.classsService.getClass().subscribe(data => {
-      console.log(data);
-      this.classsData = data;
+      let schoolId = data.get("schoolId");
+      this.classsService.getClass(schoolId).subscribe(data => {
+        console.log(data);
+        this.classsData = data;
     });
+      });
   }
 
 } 

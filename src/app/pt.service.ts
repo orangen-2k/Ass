@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 const apiUrl = 'https://5e7ca696a917d7001668397f.mockapi.io/schools';
+const id = null;
 @Injectable()
   export class PtService {
 
@@ -28,12 +29,11 @@ const apiUrl = 'https://5e7ca696a917d7001668397f.mockapi.io/schools';
       return this.http.put<any>(url, schoolsId);
   }
 
-
-  getClass(): Observable<any>{
-    return this.http.get<any>(apiUrl+"/5"+"/class");
+  getClass(schoolsId): Observable<any> {
+    return this.http.get<any>(`${apiUrl}/${schoolsId}/class`);
   }
-  getClassById(roomId): Observable<any>{
-    let url = `${apiUrl+"/5"+"/class"}/${roomId}`;
-      return this.http.get<any>(url);
+  getClassById(schoolsId, classId): Observable<any> {
+    let url = `${apiUrl}/${schoolsId}/class/${classId}`;
+    return this.http.get<any>(url);
   }
 }
