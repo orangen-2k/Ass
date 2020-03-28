@@ -25,9 +25,63 @@
 <div class="cuon" id="test_1">
         <tr>
           <th width="600">Danh sách các lớp trong trường</th>
+          <th>Action</th>
         </tr>
           <tr *ngFor="let class of classs">
-          <td><a [routerLink]="['class', class.id]">{{class.name}}</a></td>
+          <td>{{class.name}}</td>
+          <td>&nbsp;
+            <input [routerLink]="['class', class.id]"  class="btn btn-sm btn-success" type="button" value="Show"/>&nbsp;
+            <input (click)="editMotels(school)" class="btn btn-sm btn-info" type="button" value="Edit" data-toggle="modal"data-target="#exampleModal"/>&nbsp;
+            <input (click)="removeSchools()"  class="btn btn-sm btn-danger" type="button" value="Delete"/>
+          </td>
       </tr>
     </div>
 <br>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+	aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header" style="border-bottom-width: 0px;">
+				<h5 class="modal-title" id="exampleModalLabel">Motels</h5>
+				<button type="button" class="close" data-dismiss="modal" (click)="canelMotel();" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+			</div>
+			<div class="modal-body">
+        <pre>
+          {{schoolForm.value | json}}
+        </pre>
+				<form [formGroup] = "schoolForm">
+					<div class="form-row">
+						<div class="form-group col-md-6">
+							<label for="">Name</label>
+							<input type="text" class="form-control" placeholder="Name" formControlName="name">
+            </div>
+					  <div class="form-group col-md-6">
+								<label for="">Owner</label>
+								<input type="text" class="form-control" placeholder="Owner" formControlName="province">
+            </div>
+					</div>
+					<div class="form-group mt-2">
+								<label for="">Image</label>
+								<input type="text" class="form-control" placeholder="Image" formControlName="logo">
+                <img [src]="motelForm.value.image" alt="" class="my-1" style="width: 50px;">
+          </div>
+					<div class="form-row">
+						<div class="form-group col-md-8">
+							<label for="">Address</label>
+							<input type="text" class="form-control" placeholder="Address" formControlName="address">
+            </div>
+						<div class="form-group col-md-4">
+							<label for="">Room Number</label>
+							<input type="text" class="form-control" placeholder="Room Number" formControlName="president">
+            </div>
+				</div>
+				</form>
+			</div>
+			<div class="modal-footer justify-content-center" style="border-top-width: 0px;">
+				<button type="button" class="btn btn-primary" (click)="saveMotel();" data-dismiss="modal">Lưu</button>
+			</div>
+		</div>
+	</div>
+</div>

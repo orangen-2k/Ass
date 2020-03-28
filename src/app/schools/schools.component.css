@@ -8,16 +8,16 @@ table, td, th {
 	text-align: center;
 	font-family: Arial, Helvetica, sans-serif;
 	font-weight: bold;
-	font-size: 13PX;
+	font-size: 19PX;
   height: 50px;
 }
  .cuon{
             border:5px solid #00ff00;
             margin-bottom:100px;
             overflow:auto;
-            margin-left: 450px;
+            margin-left: 350px;
         }
-        #test_1{width:600px;height:400px;}
+        #test_1{width:800px;height:400px;}
 button {
 	width: 90px;
   height: 35px;

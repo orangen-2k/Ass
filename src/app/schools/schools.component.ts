@@ -9,6 +9,8 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./schools.component.css']
 })
 export class SchoolsComponent implements OnInit {
+  schools = [];
+
   schoolForm = new FormGroup({
     id: new FormControl(null),
     name: new FormControl(''),
@@ -17,7 +19,6 @@ export class SchoolsComponent implements OnInit {
     president: new FormControl(''),
     province: new FormControl('')
 });
-  schools = null;
   constructor(
     private schoolService: PtService,
     private activeRoute: ActivatedRoute,
@@ -29,12 +30,25 @@ export class SchoolsComponent implements OnInit {
       this.schools = data;
     });
   }
+  editMotels(motel) {
+    this.schoolService.getSchoolsById(motel.id).subscribe(data => {
+      this.schoolForm.setValue(data);
+    });
+  }
   saveSchool(){
     if(this.schoolForm.value.id == null){
       this.schoolService.addSchools(this.schoolForm.value).subscribe(data => {
         console.log(data);
         this.route.navigate(['']);
       })
+    }
+  }
+  removeSchools(motel) {
+    let conf = confirm("Bạn muốn xóa trường này?");
+    if (conf == true) {
+      this.schoolService.removeSchoolsById(motel.id).subscribe(data => {
+        this.ngOnInit();
+      });
     }
   }
 } 

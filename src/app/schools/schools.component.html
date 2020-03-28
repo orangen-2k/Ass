@@ -39,10 +39,16 @@
     <div class="cuon" id="test_1">
       <table border="1" align="center">
         <tr>
-          <th width="600">Danh sách trường học</th>
+          <th width="500">Danh sách trường học</th>
+          <th width="300">Action</th>
         </tr>
         <tr *ngFor="let school of schools ">
-          <td><a [routerLink]="['school', school.id]">{{school.name}}</a></td>
+          <td><a>{{school.name}}</a></td>
+          <td>&nbsp;
+            <input [routerLink]="['school', school.id]"  class="btn btn-sm btn-success" type="button" value="Show"/>&nbsp;
+            <input (click)="editMotels(school)" class="btn btn-sm btn-info" type="button" value="Edit"/>&nbsp;
+            <input (click)="removeSchools(school)"  class="btn btn-sm btn-danger" type="button" value="Delete"/>
+          </td>
          </tr>
       </table>
     </div>
