@@ -9,7 +9,7 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./schools-cn.component.css']
 })
 export class SchoolsCnComponent implements OnInit {
-  hotelForm = new FormGroup({
+  schoolForm = new FormGroup({
     id: new FormControl(null),
     name: new FormControl(''),
     logo: new FormControl(''),
@@ -25,24 +25,17 @@ export class SchoolsCnComponent implements OnInit {
 
   ngOnInit() {
     this.activeRoute.paramMap.subscribe(params =>{
-      let hotelId = params.get('id');
-      this.schoolService.getSchoolsById(hotelId).subscribe(data => {
-      this.hotelForm.setValue(data);
+      let schoolId = params.get('id');
+      this.schoolService.getSchoolsById(schoolId).subscribe(data => {
+      this.schoolForm.setValue(data);
       })
     })
   }
   
-  saveHotel(){
-    if(this.hotelForm.value.id == null){
-      this.schoolService.addNewHotel(this.hotelForm.value).subscribe(data => {
-        console.log(data);
-        this.route.navigate(['']);
-      })
-    }else{
-      this.schoolService.updateHotel(this.hotelForm.value).subscribe(data => {
+  saveSchool(){
+      this.schoolService.updateSchools(this.schoolForm.value).subscribe(data => {
         console.log(data);
         this.route.navigate(['']);
       })
     }
-  }
 }

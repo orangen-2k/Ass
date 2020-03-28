@@ -2,7 +2,7 @@
       <div class="col-8 offset-2 border">
         <div class="row">
          <div class="col-6 offset-3">
-            <table [formGroup]="hotelForm">
+            <table [formGroup]="schoolForm">
              <tr>
                <td>Tên trường:</td>
                <td><input type="text" formControlName="name" class="form-control"></td>
@@ -30,9 +30,7 @@
 </div>
   <br>
   <div class="text-center">
-    <button (click)="saveHotel()" class="btn btn-sm btn-success">Lưu</button>
-    &nbsp;
-    <button (click)="cancel()" class="btn btn-sm btn-success">Làm mới</button>
+    <button (click)="saveSchool()" class="btn btn-sm btn-success">Lưu</button>
   </div>
   <br>
   

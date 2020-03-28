@@ -5,7 +5,7 @@
       <div class="col-8 offset-2 border">
         <div class="row">
          <div class="col-6 offset-3">
-            <table [formGroup]="hotelForm">
+            <table [formGroup]="schoolForm">
              <tr>
                <td>Tên trường:</td>
                <td><input type="text" formControlName="name" class="form-control"></td>
@@ -33,21 +33,16 @@
 </div>
 <br>
   <div class="container">
-    <button (click)="saveHotel()" class="btn btn-sm btn-success">Lưu</button>
+    <button (click)="saveSchool()" class="btn btn-sm btn-success">Lưu</button>
   </div>
   <br>
     <div class="cuon" id="test_1">
       <table border="1" align="center">
         <tr>
-          <th width="450">Danh sách trường học</th>
-          <th width="120">Action</th>
+          <th width="600">Danh sách trường học</th>
         </tr>
         <tr *ngFor="let school of schools ">
           <td><a [routerLink]="['school', school.id]">{{school.name}}</a></td>
-          <td>&nbsp;
-            <input (click)="chuy(herodata)" class="btn btn-sm btn-danger" type="button" value="Edit"/>&nbsp;
-            <input (click)="removeSchools()"  class="btn btn-sm btn-danger" type="button" value="Xóa"/>
-          </td>
          </tr>
       </table>
     </div>
