@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 
 import { PtService } from './pt.service';
 import { SchoolsComponent } from './schools/schools.component';
-import { ClassComponent } from './class/class.component';
 import { SchoolsCtComponent } from './schools-ct/schools-ct.component';
 import { ClassCtComponent } from './class-ct/class-ct.component';
 
@@ -21,7 +20,7 @@ import { ClassCtComponent } from './class-ct/class-ct.component';
       {path: "school/:schoolId/class/:classId",component: ClassCtComponent},
     ])
     ],
-  declarations: [ AppComponent, SchoolsComponent, ClassComponent, SchoolsCtComponent, ClassCtComponent ],
+  declarations: [ AppComponent, SchoolsComponent, SchoolsCtComponent, ClassCtComponent ],
   bootstrap:    [ AppComponent ],
   providers: [PtService]
 })

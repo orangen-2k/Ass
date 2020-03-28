@@ -9,7 +9,7 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./schools-ct.component.css']
 })
 export class SchoolsCtComponent implements OnInit {
-  schoolsData = null;
+  
   classs = [];
   schoolForm = new FormGroup({
     id: new FormControl(null),
@@ -29,7 +29,6 @@ export class SchoolsCtComponent implements OnInit {
       let schoolId = params.get("schoolId");
       this.schoolService.getSchoolsById(schoolId).subscribe(data => {
         console.log(data);
-        this.schoolsData = data;
       });
       this.schoolService.getClass(schoolId).subscribe(data => {
         console.log(data);
@@ -37,7 +36,30 @@ export class SchoolsCtComponent implements OnInit {
       });
     });
   }
-  removeSchools() {
+  saveClass(){
+    if(this.schoolForm.value.id == null){
+      this.schoolService.addSchools(this.schoolForm.value).subscribe(data => {
+        console.log(data);
+        this.route.navigate(['']);
+      })
+    }else {
+      this.schoolService.updateSchools(this.schoolForm.value).subscribe(data => {
+        this.ngOnInit();
+      });
+    }
+    this.canelClass();
+  }
+  canelClass() {
+    this.schoolForm = new FormGroup({
+      id: new FormControl(null),
+      name: new FormControl(""),
+      logo: new FormControl(""),
+      address: new FormControl(''),
+      president: new FormControl(''),
+      province: new FormControl('')
+    });
+  }
+  removeClass() {
     let conf = confirm("Bạn chắc chắn muốn xóa trường này?");
     if (conf) {
       this.schoolService.removeSchoolsById(this.schoolsData.id).subscribe(data => {
@@ -45,7 +67,7 @@ export class SchoolsCtComponent implements OnInit {
       });
     }
   }
-  editMotels(motel) {
+  editClass(motel) {
     this.schoolService.getSchoolsById(motel.id).subscribe(data => {
       this.schoolForm.setValue(data);
     });

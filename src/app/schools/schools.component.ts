@@ -46,9 +46,9 @@ export class SchoolsComponent implements OnInit {
         this.ngOnInit();
       });
     }
-    this.canelMotel();
+    this.canelSchools();
   }
-  canelMotel() {
+  canelSchools() {
     this.schoolForm = new FormGroup({
       id: new FormControl(null),
       name: new FormControl(""),

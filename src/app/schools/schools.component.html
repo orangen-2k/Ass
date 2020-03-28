@@ -1,10 +1,11 @@
+<div class="container">
 <div class="imga" [formGroup]="schoolForm">
   <img width="200" [src]="schoolForm.value.logo" class="img-fluid"/>
 </div>
 <div class="row">
-  <div class="col-8 offset-2 border">
+  <!-- <div class="col-8 offset-2 border">
     <div class="row">
-      <div class="col-6 offset-3">
+      <div class="col-6 offset-3"> -->
         <table [formGroup]="schoolForm">
           <tr>
             <td>Tên trường:</td>
@@ -27,13 +28,13 @@
             <td><input type="text" formControlName="province" class="form-control"></td>
           </tr>
         </table>
-      </div>
+      <!-- </div>
     </div>
-  </div>
+  </div> -->
 </div>
 <br>
-<div class="container">
-  <button (click)="saveSchool()" class="btn btn-sm btn-success">Lưu</button>
+  <button (click)="saveSchool()" class="btn btn-sm btn-success">Lưu</button>&nbsp;&nbsp;
+  <button (click)="canelSchools()" class="btn btn-sm btn-success">Làm mới</button>
 </div>
 <br>
   <div class="cuon" id="test_1">

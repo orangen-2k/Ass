@@ -1,25 +1,41 @@
-<table border="1" align="center">
-  <tr>
-    <th width="200">Tên trường học</th>
-    <th width="200">Logo trường</th>
-    <th width="200">Địa chỉ</th>
-    <th width="200">Tên hiệu trưởng</th>
-    <th width="200">Tỉnh/thành phố</th>
-    <th width="120">Action</th>
-  </tr>
-  <tr>
-    <td>{{schoolsData.name}}</td>
-    <td><img width="150" src="{{schoolsData.logo}}"/></td>
-    <td>{{schoolsData.address}}</td>
-    <td>{{schoolsData.president}}</td>
-    <td>{{schoolsData.province}}</td>
-    <td>&nbsp;
-      <input data-toggle="modal"data-target="#exampleModal" class="btn btn-sm btn-danger" type="button" value="Edit"/>&nbsp;
-      <input (click)="removeSchools()"  class="btn btn-sm btn-danger" type="button" value="Xóa"/>
-    </td>
-  </tr>
-</table>
+<div class="imga" [formGroup]="schoolForm">
+  <img width="200" [src]="schoolForm.value.logo" class="img-fluid"/>
+</div>
+<div class="row">
+  <div class="col-8 offset-2 border">
+    <div class="row">
+      <div class="col-6 offset-3">
+        <table [formGroup]="schoolForm">
+          <tr>
+            <td>Tên trường:</td>
+            <td><input type="text" formControlName="name" class="form-control"></td>
+          </tr>
+          <tr>
+            <td>Logo trường:</td>
+            <td><input type="text" formControlName="logo" class="form-control"></td>
+          </tr>
+          <tr>
+            <td>Địa chỉ:</td>
+            <td><input type="text" formControlName="address" class="form-control"></td>
+          </tr>
+          <tr>
+            <td>Tên hiệu trưởng:</td>
+            <td><input type="text" formControlName="president" class="form-control"></td>
+          </tr>
+          <tr>
+            <td>Tỉnh/thành phố:</td>
+            <td><input type="text" formControlName="province" class="form-control"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
 <br>
+<div class="container">
+  <button (click)="saveClass()" class="btn btn-sm btn-success">Lưu</button>&nbsp;&nbsp;
+  <button (click)="canelClass()" class="btn btn-sm btn-success">Làm mới</button>
+</div>
 <br>
 <div class="cuon" id="test_1">
   <tr>
@@ -35,5 +51,3 @@
     </td>
   </tr>
 </div>
-<app-class></app-class>
-<br>
