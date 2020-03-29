@@ -37,14 +37,14 @@ export class SchoolsCtComponent implements OnInit {
       });
     });
   }
-  saveStudent() {
-    this.schoolForm.value.MotelId = this.schoolData.id;
+  saveClass() {
+    this.schoolForm.value.schoolId = this.schoolData.id;
     if (this.schoolForm.value.id == null) {
-      this.schoolService.addStudent(this.schoolData.id, this.schoolForm.value).subscribe(data => {
+      this.schoolService.addClass(this.schoolData.id, this.schoolForm.value).subscribe(data => {
         this.ngOnInit();
       });
     } else {
-      this.schoolService.updateStudent(this.schoolData.id, this.schoolForm.value).subscribe(data => {
+      this.schoolService.updateClass(this.schoolData.id, this.schoolForm.value).subscribe(data => {
         console.log(data);
         this.ngOnInit();
       });

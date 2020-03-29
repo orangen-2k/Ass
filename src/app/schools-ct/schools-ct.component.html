@@ -39,30 +39,26 @@
 <div class="row">
   <table [formGroup]="schoolForm">
     <tr>
-      <td>Tên trường:</td>
+      <td>Chuyên ngành:</td>
       <td><input type="text" formControlName="name" class="form-control"></td>
     </tr>
     <tr>
-      <td>Logo trường:</td>
-      <td><input type="text" formControlName="schoolId" class="form-control"></td>
-    </tr>
-    <tr>
-      <td>Địa chỉ:</td>
+      <td>Tên lớp:</td>
       <td><input type="text" formControlName="room_number" class="form-control"></td>
     </tr>
     <tr>
-      <td>Tên hiệu trưởng:</td>
+      <td>Số học sinh:</td>
       <td><input type="text" formControlName="total_student" class="form-control"></td>
     </tr>
     <tr>
-      <td>Tỉnh/thành phố:</td>
+      <td>Giáo viên chủ nhiệm:</td>
       <td><input type="text" formControlName="main_teacher" class="form-control"></td>
     </tr>
   </table>
 </div>
 <br>
 <div class="btttn">
-  <button (click)="saveStudent()" class="btn btn-sm btn-success">Lưu</button>&nbsp;&nbsp;
+  <button (click)="saveClass()" class="btn btn-sm btn-success">Lưu</button>&nbsp;&nbsp;
   <button (click)="canelClass()" class="btn btn-sm btn-success">Làm mới</button>
 </div>
 <br>

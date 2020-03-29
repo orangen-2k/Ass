@@ -39,19 +39,19 @@ const id = null;
     let url = `${apiUrl}/${schoolsId}/class/${classId}`;
     return this.http.get<any>(url);
   }
-  removeClass(stId, motId): Observable<any>{
-    let url = `${apiUrl}/${motId}/class/${stId}`;
+  removeClass(classId, schoolsId): Observable<any>{
+    let url = `${apiUrl}/${schoolsId}/class/${classId}`;
     return this.http.delete<any>(url);
   }
   // them moi 
-  addStudent(motelId, studentObject): Observable<any> {
-    let url = `${apiUrl}/${motelId}/class`;
-    return this.http.post<any>(url, studentObject);
+  addClass(schoolsId, classId): Observable<any> {
+    let url = `${apiUrl}/${schoolsId}/class`;
+    return this.http.post<any>(url, classId);
   }
 
   // cap nhat
-  updateStudent(motelId, studentObject): Observable<any>{
-    let url = `${apiUrl}/${motelId}/class/${studentObject.id}`;
-    return this.http.put<any>(url, studentObject);
+  updateClass(schoolsId, classId): Observable<any>{
+    let url = `${apiUrl}/${schoolsId}/class/${classId.id}`;
+    return this.http.put<any>(url, classId);
   }
 }
