@@ -1,6 +1,8 @@
+<input id="myInput" class="timkiem" type="text"  placeholder=" Tìm kiếm..."/>&nbsp;<button (click)="myFunction()"lass="bttk">Tìm kiếm</button>
+<br><br>
 <div class="container">
 <div class="row">
-  <table [formGroup]="schoolForm">
+  <table [formGroup]="schoolForm" >
     <tr>
       <td>Tên trường:</td>
       <td><input type="text" formControlName="name" class="form-control"></td>
@@ -34,7 +36,7 @@
 </div>
 <br>
 <div class="cuon" id="test_1">
-  <table border="1" align="center">
+  <table border="1" align="center" id="myTable">
     <tr>
       <th width="500">Danh sách trường học</th>
       <th width="300">Action</th>

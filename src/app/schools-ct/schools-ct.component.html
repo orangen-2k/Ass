@@ -1,3 +1,5 @@
+<input id="myInput" class="timkiem" type="text"  placeholder=" Tìm kiếm..."/>&nbsp;<button (click)="myFunction()"lass="bttk">Tìm kiếm</button>
+<br><br>
 <div class="container">
   <div class="row">
   <div class="col-12 d-flex justify-content-center mt-5">
@@ -20,7 +22,8 @@
 </div>
 </div>
 <br>
-<div class="cuon" id="test_1">
+<div class="cuon" id="test_1" >
+  <table border="1" align="center" id="myTable">
   <tr>
     <th width="600">Danh sách các lớp trong trường</th>
     <th width="200">Action</th>
@@ -32,7 +35,7 @@
       <input (click)="editStudent(class)" class="btn btn-sm btn-info" type="button" value="Edit"/>&nbsp;
       <input (click)="removeClass(class)"  class="btn btn-sm btn-danger" type="button" value="Delete"/>
     </td>
-  </tr>
+  </tr></table>
 </div>
 
 <div class="table2">
