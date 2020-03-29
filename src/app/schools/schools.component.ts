@@ -39,7 +39,7 @@ export class SchoolsComponent implements OnInit {
     if(this.schoolForm.value.id == null){
       this.schoolService.addSchools(this.schoolForm.value).subscribe(data => {
         console.log(data);
-        this.route.navigate(['']);
+        this.ngOnInit();
       })
     }else {
       this.schoolService.updateSchools(this.schoolForm.value).subscribe(data => {

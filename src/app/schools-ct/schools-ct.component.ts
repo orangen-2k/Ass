@@ -14,10 +14,10 @@ export class SchoolsCtComponent implements OnInit {
   schoolForm = new FormGroup({
     id: new FormControl(null),
     name: new FormControl(''),
-    logo: new FormControl(''),
-    address: new FormControl(''),
-    president: new FormControl(''),
-    province: new FormControl('')
+    schoolId: new FormControl(''),
+    room_number: new FormControl(''),
+    total_student: new FormControl(''),
+    main_teacher: new FormControl('')
 });
   constructor(
     private schoolService: PtService,
@@ -37,14 +37,15 @@ export class SchoolsCtComponent implements OnInit {
       });
     });
   }
-  saveClass(){
-    if(this.schoolForm.value.id == null){
-      this.schoolService.addSchools(this.schoolForm.value).subscribe(data => {
+  saveStudent() {
+    this.schoolForm.value.MotelId = this.schoolData.id;
+    if (this.schoolForm.value.id == null) {
+      this.schoolService.addStudent(this.schoolData.id, this.schoolForm.value).subscribe(data => {
+        this.ngOnInit();
+      });
+    } else {
+      this.schoolService.updateStudent(this.schoolData.id, this.schoolForm.value).subscribe(data => {
         console.log(data);
-        this.route.navigate(['']);
-      })
-    }else {
-      this.schoolService.updateSchools(this.schoolForm.value).subscribe(data => {
         this.ngOnInit();
       });
     }
@@ -52,25 +53,28 @@ export class SchoolsCtComponent implements OnInit {
   }
   canelClass() {
     this.schoolForm = new FormGroup({
-      id: new FormControl(null),
-      name: new FormControl(""),
-      logo: new FormControl(""),
-      address: new FormControl(''),
-      president: new FormControl(''),
-      province: new FormControl('')
-    });
+    id: new FormControl(null),
+    name: new FormControl(''),
+    schoolId: new FormControl(''),
+    room_number: new FormControl(''),
+    total_student: new FormControl(''),
+    main_teacher: new FormControl('')
+});
   }
-  removeClass() {
-    let conf = confirm("Bạn chắc chắn muốn xóa trường này?");
-    if (conf) {
-      this.schoolService.removeSchoolsById(this.schoolsData.id).subscribe(data => {
-        this.route.navigate([""]);
+  removeClass(student) {
+    let conf = confirm("Bạn muốn xóa lớp này?");
+    if (conf == true) {
+      this.schoolService.removeClass(student.id, this.schoolData.id).subscribe(data => {
+        this.ngOnInit();
       });
     }
   }
-  editClass(motel) {
-    this.schoolService.getSchoolsById(motel.id).subscribe(data => {
-      this.schoolForm.setValue(data);
+   editStudent(student) {
+    console.log(this.schoolData.id);
+    console.log(student.id);
+    this.schoolService.getClassById(this.schoolData.id, student.id).subscribe(data => {
+        console.log(data);
+        this.schoolForm.setValue(data);
     });
   }
 }

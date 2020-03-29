@@ -1,4 +1,3 @@
-
 <div class="container">
   <div class="row">
   <div class="col-12 d-flex justify-content-center mt-5">
@@ -30,12 +29,13 @@
     <td>{{class.name}}</td>
     <td>&nbsp;
       <input [routerLink]="['class', class.id]"  class="btn btn-sm btn-success" type="button" value="Show"/>&nbsp;
-      <input (click)="editMotels(class)" class="btn btn-sm btn-info" type="button" value="Edit"/>&nbsp;
+      <input (click)="editStudent(class)" class="btn btn-sm btn-info" type="button" value="Edit"/>&nbsp;
       <input (click)="removeClass(class)"  class="btn btn-sm btn-danger" type="button" value="Delete"/>
     </td>
   </tr>
 </div>
 
+<div class="table2">
 <div class="row">
   <table [formGroup]="schoolForm">
     <tr>
@@ -44,28 +44,26 @@
     </tr>
     <tr>
       <td>Logo trường:</td>
-      <td><input type="text" formControlName="logo" class="form-control"></td>
+      <td><input type="text" formControlName="schoolId" class="form-control"></td>
     </tr>
     <tr>
       <td>Địa chỉ:</td>
-      <td><input type="text" formControlName="address" class="form-control"></td>
+      <td><input type="text" formControlName="room_number" class="form-control"></td>
     </tr>
     <tr>
       <td>Tên hiệu trưởng:</td>
-      <td><input type="text" formControlName="president" class="form-control"></td>
+      <td><input type="text" formControlName="total_student" class="form-control"></td>
     </tr>
     <tr>
       <td>Tỉnh/thành phố:</td>
-      <td><input type="text" formControlName="province" class="form-control"></td>
+      <td><input type="text" formControlName="main_teacher" class="form-control"></td>
     </tr>
   </table>
-  <div class="imga" [formGroup]="schoolForm">
-    <img width="250" [src]="schoolForm.value.logo" class="img-fluid"/>
-  </div>
 </div>
 <br>
 <div class="btttn">
-  <button (click)="saveClass()" class="btn btn-sm btn-success">Lưu</button>&nbsp;&nbsp;
+  <button (click)="saveStudent()" class="btn btn-sm btn-success">Lưu</button>&nbsp;&nbsp;
   <button (click)="canelClass()" class="btn btn-sm btn-success">Làm mới</button>
 </div>
 <br>
+</div>
