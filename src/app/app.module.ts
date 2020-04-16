@@ -11,6 +11,7 @@ import { SchoolsComponent } from './schools/schools.component';
 import { SchoolsCtComponent } from './schools-ct/schools-ct.component';
 import { ClassCtComponent } from './class-ct/class-ct.component';
 import { ShowallComponent } from './showall/showall.component';
+import { AddComponent } from './add/add.component';
 
 @NgModule({
   imports:      [ 
@@ -18,11 +19,12 @@ import { ShowallComponent } from './showall/showall.component';
     RouterModule.forRoot([
       {path: '', component: SchoolsComponent},
       {path: 'show', component: ShowallComponent},
+      {path: 'add', component: AddComponent},
       {path: 'school/:schoolId', component: SchoolsCtComponent},
       {path: "school/:schoolId/class/:classId",component: ClassCtComponent},
     ])
     ],
-  declarations: [ AppComponent, SchoolsComponent, SchoolsCtComponent, ClassCtComponent, ShowallComponent ],
+  declarations: [ AppComponent, SchoolsComponent, SchoolsCtComponent, ClassCtComponent, ShowallComponent, AddComponent ],
   bootstrap:    [ AppComponent ],
   providers: [PtService]
 })

@@ -9,7 +9,7 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./schools.component.css']
 })
 export class SchoolsComponent implements OnInit {
-  schools = [];
+  schools = []; 
 
   schoolForm = new FormGroup({
     id: new FormControl(null),
@@ -33,29 +33,6 @@ export class SchoolsComponent implements OnInit {
   editMotels(motel) {
     this.schoolService.getSchoolsById(motel.id).subscribe(data => {
       this.schoolForm.setValue(data);
-    });
-  }
-  saveSchool(){
-    if(this.schoolForm.value.id == null){
-      this.schoolService.addSchools(this.schoolForm.value).subscribe(data => {
-        console.log(data);
-        this.ngOnInit();
-      })
-    }else {
-      this.schoolService.updateSchools(this.schoolForm.value).subscribe(data => {
-        this.ngOnInit();
-      });
-    }
-    this.canelSchools();
-  }
-  canelSchools() {
-    this.schoolForm = new FormGroup({
-      id: new FormControl(null),
-      name: new FormControl(""),
-      logo: new FormControl(""),
-      address: new FormControl(''),
-      president: new FormControl(''),
-      province: new FormControl('')
     });
   }
   removeSchools(motel) {

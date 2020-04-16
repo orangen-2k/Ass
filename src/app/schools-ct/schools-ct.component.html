@@ -65,3 +65,120 @@
 </div>
 <br>
 </div>
+<!-- <input id="myInput" class="timkiem" type="text"  placeholder=" Tìm kiếm..."/>&nbsp;<button (click)="myFunction()"lass="bttk">Tìm kiếm</button>
+<div class="container">
+  <div class="row">
+  <div class="col-12 d-flex justify-content-center mt-5">
+      <div class="card mb-3 col-md-6">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img [src]="schoolData.logo" class="card-img py-3" [alt]="schoolData.logo" >
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h4 class="card-title">{{schoolData.name}}</h4>
+              <h5 class="card-text">Địa chỉ: <span class="font-weight-normal">{{schoolData.address}}</span></h5>
+              <h5 class="card-text">Tên hiệu trưởng: <span class="font-weight-normal">{{schoolData.province}}</span></h5>
+              <h5 class="card-text">Tỉnh/thành phố: <span class="font-weight-normal">{{schoolData.president}}</span></h5>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+</div>
+<br>
+<div class="cuon" id="test_1" >
+  <table border="1" align="center" id="myTable">
+  <tr>
+    <th width="600">Danh sách các lớp trong trường</th>
+    <th width="200">Action</th>
+  </tr>
+  <tr *ngFor="let class of classs">
+    <td>{{class.name}}</td>
+    <td>&nbsp;
+      <input [routerLink]="['class', class.id]"  class="btn btn-sm btn-success" type="button" value="Show"/>&nbsp;
+      <input (click)="editStudent(class)" class="btn btn-outline-secondary" data-toggle="modal"
+							data-target="#exampleModal" type="button" value="Edit"/>&nbsp;
+      <input (click)="removeClass(class)"  class="btn btn-sm btn-danger" type="button" value="Delete"/>
+    </td>
+  </tr></table>
+</div>
+
+<div class="table2">
+<div class="row">
+  <table [formGroup]="schoolForm">
+    <tr>
+      <td>Chuyên ngành:</td>
+      <td><input type="text" formControlName="name" class="form-control"></td>
+    </tr>
+    <tr>
+      <td>Tên lớp:</td>
+      <td><input type="text" formControlName="room_number" class="form-control"></td>
+    </tr>
+    <tr>
+      <td>Số học sinh:</td>
+      <td><input type="text" formControlName="total_student" class="form-control"></td>
+    </tr>
+    <tr>
+      <td>Giáo viên chủ nhiệm:</td>
+      <td><input type="text" formControlName="main_teacher" class="form-control"></td>
+    </tr>
+    <tr>
+      <td>ID Trường:</td>
+      <td><input type="text" formControlName="schoolId" class="form-control"></td>
+    </tr>
+  </table>
+</div>
+<br>
+<div class="btttn">
+  <button (click)="saveClass()" class="btn btn-sm btn-success">Lưu</button>&nbsp;&nbsp;
+  <button (click)="canelClass()" class="btn btn-sm btn-success">Làm mới</button>
+</div>
+<br>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+	aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header" style="border-bottom-width: 0px;">
+				<h5 class="modal-title" id="exampleModalLabel">Motels</h5>
+				<button type="button" class="close" data-dismiss="modal" (click)="canelMotel();" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+			</div>
+			<div class="modal-body">
+				<form [formGroup] = "schoolForm">
+					<div class="form-row">
+						<div class="form-group col-md-6">
+							<label for="">Name</label>
+							<input type="text" class="form-control" placeholder="Name" formControlName="name">
+            </div>
+					  <div class="form-group col-md-6">
+								<label for="">Owner</label>
+								<input type="text" class="form-control" placeholder="Owner" formControlName="province">
+            </div>
+					</div>
+					<div class="form-group mt-2">
+								<label for="">Image</label>
+								<input type="text" class="form-control" placeholder="Image" formControlName="logo">
+                <img [src]="motelForm.value.image" alt="" class="my-1" style="width: 50px;">
+          </div>
+					<div class="form-row">
+						<div class="form-group col-md-8">
+							<label for="">Address</label>
+							<input type="text" class="form-control" placeholder="Address" formControlName="address">
+            </div>
+						<div class="form-group col-md-4">
+							<label for="">Room Number</label>
+							<input type="text" class="form-control" placeholder="Room Number" formControlName="president">
+            </div>
+				</div>
+				</form>
+			</div>
+			<div class="modal-footer justify-content-center" style="border-top-width: 0px;">
+				<button type="button" class="btn btn-primary" (click)="saveMotel();" data-dismiss="modal">Lưu</button>
+			</div>
+		</div>
+	</div>
+</div> -->
