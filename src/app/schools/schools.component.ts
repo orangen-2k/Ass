@@ -30,15 +30,15 @@ export class SchoolsComponent implements OnInit {
       this.schools = data;
     });
   }
-  editMotels(motel) {
-    this.schoolService.getSchoolsById(motel.id).subscribe(data => {
+  editSchool(School) {
+    this.schoolService.getSchoolsById(School.id).subscribe(data => {
       this.schoolForm.setValue(data);
     });
   }
-  removeSchools(motel) {
+  removeSchools(School) {
     let conf = confirm("Bạn muốn xóa trường này?");
     if (conf == true) {
-      this.schoolService.removeSchoolsById(motel.id).subscribe(data => {
+      this.schoolService.removeSchoolsById(School.id).subscribe(data => {
         this.ngOnInit();
       });
     }
@@ -61,4 +61,15 @@ export class SchoolsComponent implements OnInit {
     }       
   }
 }
+saveSchool(){
+    if(this.schoolForm.value.id == null){
+      this.schoolService.addSchools(this.schoolForm.value).subscribe(data => {
+        this.ngOnInit();
+      })
+    }else {
+      this.schoolService.updateSchools(this.schoolForm.value).subscribe(data => {
+        this.ngOnInit();
+      });
+    }
+  }
 } 
