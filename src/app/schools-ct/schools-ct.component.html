@@ -41,11 +41,9 @@
 	aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
-			<div class="modal-header" style="border-bottom-width: 0px;">
+			<div class="modal-header border-bottom" style="border-bottom-width: 0px;">
 				<h5 class="modal-title" id="exampleModalLabel">Thông tin chi tiết</h5>
-				<button class="close" data-dismiss="modal" (click)="canelMotel();" aria-label="Close">
-          <span aria-hidden="true">X</span>
-        </button>
+				<a type="button" class="close" id="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></a>
 			</div>
 			<div class="modal-body">
 				<form [formGroup] = "schoolForm">
