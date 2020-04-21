@@ -12,14 +12,32 @@
       <td>{{school.name}}</td>
       <td>&nbsp;
         <input [routerLink]="['school', school.id]"  class="btn btn-sm btn-success" type="button" value="Show"/>&nbsp;
-        <input data-toggle="modal" data-target="#exampleModal" (click)="editSchool(school);"  class="btn btn-sm btn-info" type="button" value="Edit"/>&nbsp;
+        <!-- <input data-toggle="modal" data-target="#exampleModal" (click)="editSchool(school);"  class="btn btn-sm btn-info" type="button" value="Edit"/>&nbsp; -->
+        <input (click)="editSchool(school)"  class="btn btn-sm btn-info" type="button" value="Edit"/>&nbsp;
         <input (click)="removeSchools(school)"  class="btn btn-sm btn-danger" type="button" value="Delete"/>
       </td>
     </tr>
   </table>
 </div>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
 	aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
@@ -63,4 +81,4 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div> -->
