@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 const apiUrl = 'https://5e7ca696a917d7001668397f.mockapi.io/schools';
 const id = null;
 @Injectable()
-  export class PtService {
+export class HotelService {
 
   constructor(private http: HttpClient) { }
 

@@ -6,24 +6,26 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 
-import { PtService } from './pt.service';
-import { SchoolsComponent } from './schools/schools.component';
-import { SchoolsCtComponent } from './schools-ct/schools-ct.component';
-import { ShowallComponent } from './showall/showall.component';
-import { AddComponent } from './add/add.component';
+import { HotelDetailComponent } from './hotel-detail/hotel-detail.component';
+import { HotelFormComponent } from './hotel-form/hotel-form.component';
+import { RoomsComponent } from './rooms/rooms.component';
+import { HotelsComponent } from './hotels/hotels.component';
+import { RoomsDetailComponent } from './rooms-detail/rooms-detail.component';
+import { HotelService } from './hotel.service';
 
 @NgModule({
   imports:      [ 
     BrowserModule, FormsModule , HttpClientModule,ReactiveFormsModule,
     RouterModule.forRoot([
-      {path: '', component: SchoolsComponent},
-      {path: 'show', component: ShowallComponent},
-      {path: 'add', component: AddComponent},
-      {path: 'school/:schoolId', component: SchoolsCtComponent},
+      {path: '', component: HotelsComponent},
+      {path: 'detail1/:hotelId', component: HotelDetailComponent},
+      {path: 'rooms/:hotelId', component: RoomsDetailComponent},
+      {path: 'add-hotel', component: HotelFormComponent},
+      {path: 'edit-hotel/:id', component: HotelFormComponent},
     ])
     ],
-  declarations: [ AppComponent, SchoolsComponent, SchoolsCtComponent, ShowallComponent, AddComponent ],
+  declarations: [ AppComponent, HotelDetailComponent, HotelFormComponent, RoomsComponent, HotelsComponent, RoomsDetailComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [PtService]
+  providers: [PtService, HotelService]
 })
 export class AppModule { }
