@@ -26,6 +26,6 @@ import { HotelService } from './hotel.service';
     ],
   declarations: [ AppComponent, HotelDetailComponent, HotelFormComponent, RoomsComponent, HotelsComponent, RoomsDetailComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [PtService, HotelService]
+  providers: [ HotelService]
 })
 export class AppModule { }

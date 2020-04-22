@@ -6,52 +6,42 @@ const apiUrl = 'https://5e7ca696a917d7001668397f.mockapi.io/schools';
 const id = null;
 @Injectable()
 export class HotelService {
+constructor(private http: HttpClient) { }
 
-  constructor(private http: HttpClient) { }
-
-  getSchools(): Observable<any>{
-      return this.http.get<any>(apiUrl);
+  getHotels(): Observable<any>{
+    return this.http.get<any>(apiUrl);
   }
-  getSchoolsById(schoolsId): Observable<any>{
-    let url = `${apiUrl}/${schoolsId}`;
-      return this.http.get<any>(url);
-  }
-  removeSchoolsById(schoolsId): Observable<any>{
-    let url = `${apiUrl}/${schoolsId}`;
-      return this.http.delete<any>(url);
-  }
-  addSchools(schoolsId): Observable<any>{
-    return this.http.post<any>(apiUrl, schoolsId);
-  }
-
-  updateSchools(schoolsId): Observable<any>{
-    let url = `${apiUrl}/${schoolsId.id}`;
-      return this.http.put<any>(url, schoolsId);
-  }
-
-
-
-  getClass(schoolsId): Observable<any> {
-     let url = `${apiUrl}/${schoolsId}/class`;
+  getHotelById(hotelId): Observable<any>{
+    let url = `${apiUrl}/${hotelId}`;
     return this.http.get<any>(url);
   }
-  getClassById(schoolsId, classId): Observable<any> {
-    let url = `${apiUrl}/${schoolsId}/class/${classId}`;
+
+  getRooms(): Observable<any>{
+    return this.http.get<any>(apiUrl+"/3"+"/rooms");
+  }
+  getRoomsById(roomId): Observable<any>{
+    let url = `${apiUrl+"/3"+"/rooms"}/${roomId}`;
     return this.http.get<any>(url);
   }
-  removeClass(classId, schoolsId): Observable<any>{
-    let url = `${apiUrl}/${schoolsId}/class/${classId}`;
+
+
+
+
+
+
+
+
+
+  removeHotelById(hotelId): Observable<any>{
+    let url = `${apiUrl}/${hotelId}`;
     return this.http.delete<any>(url);
   }
-  // them moi 
-  addClass(schoolsId, classId): Observable<any> {
-    let url = `${apiUrl}/${schoolsId}/class`;
-    return this.http.post<any>(url, classId);
+  addNewHotel(hotelObject): Observable<any>{
+    return this.http.post<any>(apiUrl, hotelObject);
   }
 
-  // cap nhat
-  updateClass(schoolsId, classId): Observable<any>{
-    let url = `${apiUrl}/${schoolsId}/class/${classId.id}`;
-    return this.http.put<any>(url, classId);
+  updateHotel(hotelObject): Observable<any>{
+    let url = `${apiUrl}/${hotelObject.id}`;
+    return this.http.put<any>(url, hotelObject);
   }
 }
